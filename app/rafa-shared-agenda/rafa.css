@@ -7,3 +7,7 @@ body:has(.rafaApp),body:has(.rafaLogin){background:#f6f6f1;color:#202722;font-fa
 .rafaGrid{gap:2px;background:#202722;border:2px solid #202722}
 .rafaDay{border:0}
 @media(max-width:700px){.rafaGrid{gap:2px;background:#202722;border-top:2px solid #202722;border-bottom:2px solid #202722}.rafaGrid.v14 .rafaDay,.rafaGrid.v35 .rafaDay{border:0}}
+
+.rafaDay.past{background:#e7e7e4;color:#6f726f}.rafaDay.past .with{background:#d7d8d5}.rafaDay.past .personTag{filter:grayscale(1);opacity:.75}
+.rafaGrid.v35 .rafaDay{height:235px}.rafaGrid.v35 .transfers{display:grid}.rafaGrid.v35 .transfers p{display:block}
+@media(max-width:700px){.rafaGrid.v35 .rafaDay{height:250px}.rafaGrid.v35 .transfers{display:grid}.rafaGrid.v35 .transfers p{display:block}}
