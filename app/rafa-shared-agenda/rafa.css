@@ -16,3 +16,7 @@ body:has(.rafaApp),body:has(.rafaLogin){background:#f6f6f1;color:#202722;font-fa
 .rafaGrid .rafaDay .transfers{display:grid!important}
 .rafaGrid .rafaDay .transfers p{display:block!important}
 @media(max-width:700px){.rafaGrid.v14 .rafaDay,.rafaGrid.v35 .rafaDay{height:270px}.rafaGrid.v14 .transfers,.rafaGrid.v35 .transfers{display:grid!important}.rafaGrid.v14 .transfers p,.rafaGrid.v35 .transfers p{display:block!important}}
+
+/* Month cells need enough vertical space for both transfer rows. */
+.rafaGrid.v35 .rafaDay{height:300px!important}
+@media(max-width:700px){.rafaGrid.v35 .rafaDay{height:300px!important}}
