@@ -45,3 +45,6 @@ body:has(.rafaApp),body:has(.rafaLogin){background:#f6f6f1;color:#202722;font-fa
 .rafaDay .personSelect.other{background:#eee5f5;color:#604277;border-color:#d9c8e7}
 .rafaDay .personSelect.none{background:#f0f0ed;color:#777;border-color:#ddd}
 .rafaDay.past .inlineField select{filter:grayscale(1);opacity:.8}
+
+/* Inline selects require additional room in Month cards. */
+@media(min-width:701px){.rafaGrid.v35 .rafaDay{height:225px!important}}
