@@ -20,3 +20,15 @@ body:has(.rafaApp),body:has(.rafaLogin){background:#f6f6f1;color:#202722;font-fa
 /* Month cells need enough vertical space for both transfer rows. */
 .rafaGrid.v35 .rafaDay{height:300px!important}
 @media(max-width:700px){.rafaGrid.v35 .rafaDay{height:300px!important}}
+
+/* Compact desktop month: transfer responsibilities sit side by side. */
+@media(min-width:701px){
+.rafaGrid.v35 .rafaDay{height:185px!important}
+.rafaGrid.v35 .rafaDay .date{height:40px;padding:5px 9px}
+.rafaGrid.v35 .rafaDay .date b{font-size:18px}
+.rafaGrid.v35 .rafaDay .with{padding:7px 9px}
+.rafaGrid.v35 .rafaDay .with strong{font-size:15px}
+.rafaGrid.v35 .rafaDay .where{min-height:25px;margin:7px 9px}
+.rafaGrid.v35 .rafaDay .transfers{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:6px;margin:5px 9px;padding-top:6px}
+.rafaGrid.v35 .rafaDay .personTag{padding:3px 6px;font-size:9px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
