@@ -48,3 +48,12 @@ body:has(.rafaApp),body:has(.rafaLogin){background:#f6f6f1;color:#202722;font-fa
 
 /* Inline selects require additional room in Month cards. */
 @media(min-width:701px){.rafaGrid.v35 .rafaDay{height:225px!important}}
+
+/* iOS Safari zooms focused form controls below 16px. */
+@media(max-width:700px){
+html:has(.rafaApp),body:has(.rafaApp){max-width:100%;overflow-x:hidden}
+.rafaGrid.v14,.rafaGrid.v35{width:100%;max-width:100vw;box-sizing:border-box}
+.rafaGrid.v14 .rafaDay,.rafaGrid.v35 .rafaDay{min-width:0;overflow:hidden}
+.rafaDay .inlineField select{font-size:16px;line-height:1.2;touch-action:manipulation}
+.rafaGrid.v35 .transfers{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px}
+}
