@@ -1,0 +1,3 @@
+import{hasAccess}from"../../rafa-shared-agenda/auth";import{getDays,updateDays}from"../../lib/rafaDb";
+export async function GET(r:Request){if(!await hasAccess())return Response.json({error:"Unauthorized"},{status:401});const u=new URL(r.url),from=u.searchParams.get("from")??"2026-08-18",to=u.searchParams.get("to")??"2026-09-21";return Response.json({days:await getDays(from,to)})}
+export async function PATCH(r:Request){if(!await hasAccess())return Response.json({error:"Unauthorized"},{status:401});const b=await r.json()as{dates:string[],field:string,value:string};if(!b.dates?.length||!b.value)return Response.json({error:"Invalid"},{status:400});await updateDays(b.dates,b.field,b.value);return Response.json({ok:true})}
