@@ -32,3 +32,4 @@ body:has(.rafaApp),body:has(.rafaLogin){background:#f6f6f1;color:#202722;font-fa
 .rafaGrid.v35 .rafaDay .transfers{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:6px;margin:5px 9px;padding-top:6px}
 .rafaGrid.v35 .rafaDay .personTag{padding:3px 6px;font-size:9px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
+
