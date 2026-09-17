@@ -33,6 +33,7 @@ async function getFacts(): Promise<{ facts: MatrixFact[]; error?: string }> {
   }
 }
 
+// Competitive capability matrix route. Keep this page deployed from main.
 export default async function CompetitiveAnalysis() {
   const { facts, error } = await getFacts();
 
