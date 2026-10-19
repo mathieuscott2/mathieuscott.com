@@ -49,8 +49,8 @@ export default function MoviesRankingPage() {
     if (!q) return rows.slice(0, 100);
     return rows.map((row, index) => {
       const primary = score(titleOf(row), q);
-      const other = Math.min(...Object.values(row).filter(v => typeof v === "string" || typeof v === "number").map(v => score(String(v), q)));
-      return { row, index, rank: Math.min(primary, other + 2) };
+      const original = score(String(row.original_title ?? ""), q);
+      return { row, index, rank: Math.min(primary, original + 1) };
     }).filter(x => Number.isFinite(x.rank)).sort((a, b) => a.rank - b.rank || a.index - b.index).slice(0, 100).map(x => x.row);
   }, [query, rows]);
   return (
@@ -70,7 +70,7 @@ export default function MoviesRankingPage() {
           {results.map((row, i) => <article key={i} style={{ padding: "18px 22px", borderRadius: 12, border: "1px solid #334155", background: "#151e30" }}>
             <h2 style={{ fontSize: 20, margin: "0 0 12px" }}>{titleOf(row)}</h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 24px" }}>
-              {Object.entries(row).filter(([, v]) => v !== null && v !== "" && typeof v !== "object").map(([k, v]) => <div key={k} style={{ fontSize: 13, maxWidth: "100%", overflowWrap: "anywhere" }}><span style={{ color: "#94a3b8" }}>{k.replace(/_/g, " ")}: </span><span>{String(v)}</span></div>)}
+              {Object.entries(row).filter(([, v]) => true).map(([k, v]) => <div key={k} style={{ fontSize: 13, maxWidth: "100%", overflowWrap: "anywhere" }}><span style={{ color: "#94a3b8" }}>{k.replace(/_/g, " ")}: </span><span>{v === null || v === "" ? "N/A" : typeof v === "object" ? JSON.stringify(v) : String(v)}</span></div>)}
             </div>
           </article>)}
         </div>
